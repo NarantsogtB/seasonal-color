@@ -9,6 +9,12 @@ from pydantic import BaseModel
 
 import mediapipe as mp
 
+
+print("MEDIAPIPE VERSION:", getattr(mp, "__version__", "unknown"))
+print("MEDIAPIPE FILE:", getattr(mp, "__file__", "unknown"))
+print("MEDIAPIPE DIR HAS solutions?:", hasattr(mp, "solutions"))
+print("MEDIAPIPE DIR:", [x for x in dir(mp) if "solution" in x.lower()])
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("personal-color-analyzer")
 
